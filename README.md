@@ -1,5 +1,5 @@
 # JLock
-A mini jar to ensure the uniqueness of execution of an java applciation.
+A mini jar to ensure the uniqueness of execution of an java application.
 
 
 ### How to use it?
