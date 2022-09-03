@@ -19,7 +19,7 @@ public class JLock {
 		if (appId == null || appId.isEmpty()) {
 			throw new JLockException("Input string is null or empty");
 		}
-		this.applicationId = JLockUtils.normalize(appId);
+		this.applicationId = Utils.normalize(appId);
 	}
 
 	public boolean isLocked() {
