@@ -8,8 +8,6 @@ import java.nio.channels.FileLock;
 
 public class JLock {
 
-	private static final String ALL_NOT_VALID_CHARACTERS = "[^a-zA-Z0-9\\.\\-]";
-
 	private String applicationId;
 	private FileLock fileLock;
 	private FileChannel fileChannel;
@@ -18,11 +16,21 @@ public class JLock {
 	private boolean firstCheckDone = false;
 
 	public JLock(final String appId) {
-		this.applicationId = appId.replaceAll(ALL_NOT_VALID_CHARACTERS, "_");
+		if (appId == null || appId.isEmpty()) {
+			throw new JLockException("Input string is null or empty");
+		}
+		this.applicationId = JLockUtils.normalize(appId);
 	}
 
 	public boolean isLocked() {
 		return this.isLocked(this.applicationId);
+	}
+
+	public void releaseLock() {
+		tryCloseFileLocker();
+		tryCloseFileChannel();
+		tryCloseRandomAccessFile();
+		deleteLockFile();
 	}
 
 	private boolean isLocked(String applicationId) {
@@ -43,25 +51,18 @@ public class JLock {
 		try {
 			this.fileLock = this.fileChannel.tryLock();
 			if (null == this.fileLock) {
-				throw new RuntimeException("It is locked!");
+				throw new JLockException("It is locked!");
 			}
 			if (!this.firstCheckDone) {
 				Runtime.getRuntime().addShutdownHook(new Thread(this::releaseLock));
 			}
 			this.firstCheckDone = true;
-		} catch (RuntimeException | IOException e) {
+		} catch (JLockException | IOException e) {
 			tryCloseFileChannel();
 			tryCloseRandomAccessFile();
 			return true;
 		}
 		return false;
-	}
-
-	public void releaseLock() {
-		tryCloseFileLocker();
-		tryCloseFileChannel();
-		tryCloseRandomAccessFile();
-		deleteLockFile();
 	}
 
 	private void deleteLockFile() {
