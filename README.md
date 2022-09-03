@@ -4,7 +4,7 @@ A mini jar to ensure the uniqueness of execution of an java applciation.
 
 ### How to use it?
 
-At application startup
+At the application startup
 
 ```
 JLock jLock = new JLock("my-applciation-id");
