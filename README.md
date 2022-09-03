@@ -10,7 +10,7 @@ At application startup
 JLock jLock = new JLock("my-applciation-id");
 if (jLock.isLocked()){
   MessageDialog.error(this, "Application is already running!");
-	System.exit(3);
+  System.exit(3);
 }
 ```
 
