@@ -4,7 +4,7 @@ A mini library for unique execution of an java application
 
 ### How to use it?
 
-At applciation startup
+At application startup
 
 ```
 JLock jLock = new JLock("my-applciation-id");
