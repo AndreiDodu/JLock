@@ -20,3 +20,8 @@ To release manually:
 jLock.release();
 ```
 
+To release automatically:
+
+```
+System.exit(status);
+```
