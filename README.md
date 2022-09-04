@@ -14,7 +14,7 @@ if (jLock.isLocked()){
 }
 ```
 
-To release:
+To release manually:
 
 ```
 jLock.release();
