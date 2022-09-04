@@ -7,7 +7,7 @@ A mini jar to ensure the uniqueness of execution of an java application.
 At the application startup
 
 ```
-JLock jLock = new JLock("my-application-id");
+JLock jLock = new JLock("my-application-name");
 if (jLock.isLocked()){
   MessageDialog.error(this, "Application is already running!");
   System.exit(3);
