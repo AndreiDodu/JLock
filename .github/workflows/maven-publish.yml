@@ -17,9 +17,7 @@ jobs:
           distribution: 'adopt'
       - name: Package to GitHub Packages
         run: mvn -B package --file pom.xml
-      - name: Publish to GitHub Packages Apache Maven
-        run: mvn deploy
+      - name: Publish to GitHub Packages
         env:
-          GITHUB_USERNAME: AndreiDodu
           GITHUB_TOKEN: ${{ secrets.RELEASE_TOKEN }}
-          BUILD_ENV: 'github-actions'
+        run: mvn deploy
