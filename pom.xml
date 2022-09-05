@@ -45,7 +45,7 @@
 
 	<distributionManagement>
 		<repository>
-			<id>github-andrei</id>
+			<id>github-andrei</id> 
 			<name>GitHub Andrei</name>
 			<url>https://maven.pkg.github.com/AndreiDodu/JLock</url>
 		</repository>
