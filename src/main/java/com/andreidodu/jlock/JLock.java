@@ -14,11 +14,13 @@ public class JLock {
 	private RandomAccessFile randomAccessFile;
 	private File file;
 	private boolean firstCheckDone = false;
+	private boolean automaticUnlock = false;
 
-	public JLock(final String appId) {
+	public JLock(final String appId, boolean automaticUnlock) {
 		if (appId == null || appId.isEmpty()) {
 			throw new JLockException("Input string is null or empty");
 		}
+		this.automaticUnlock = automaticUnlock;
 		this.applicationId = Utils.normalize(appId);
 	}
 
@@ -53,7 +55,7 @@ public class JLock {
 			if (null == this.fileLock) {
 				throw new JLockException("It is locked!");
 			}
-			if (!this.firstCheckDone) {
+			if (this.automaticUnlock && !this.firstCheckDone) {
 				Runtime.getRuntime().addShutdownHook(new Thread(this::releaseLock));
 			}
 			this.firstCheckDone = true;

@@ -5,10 +5,13 @@
 
 	<groupId>com.andreidodu</groupId>
 	<artifactId>JLock</artifactId>
-	<version>0.1</version>
+	<version>0.2</version>
 
 	<name>JLock</name>
 	<url>https://github.com/AndreiDodu</url>
+
+
+	<packaging>jar</packaging>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -37,4 +40,24 @@
 			</plugins>
 		</pluginManagement>
 	</build>
+
+
+	<distributionManagement>
+		<repository>
+			<id>github</id>
+			<name>GitHub Apache Maven Packages</name>
+			<url>https://maven.pkg.github.com/AndreiDodu/JLock</url>
+		</repository>
+	</distributionManagement>
+
+
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>${project.groupId}</groupId>
+				<artifactId>JLock</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
 </project>

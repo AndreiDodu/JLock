@@ -7,12 +7,14 @@ A mini jar to ensure the uniqueness of execution of an java application.
 At the application startup
 
 ```
-JLock jLock = new JLock("my-application-name");
+JLock jLock = new JLock("MY_APPLICATION_NAME", ENABLE_AUTOMATIC_UNLOCK);
 if (jLock.isLocked()){
-  MessageDialog.error(this, "Application is already running!");
+  MessageDialog.error(your_jform, "Application is already running!");
   System.exit(3);
 }
 ```
+
+where `MY_APPLICATION_NAME` is the application name and the boolean `ENABLE_AUTOMATIC_UNLOCK`, if true, enables the automatic unlocking when `System.exit(X)` is called.
 
 To release manually:
 
