@@ -20,4 +20,6 @@ jobs:
       - name: Publish to GitHub Packages Apache Maven
         run: mvn deploy
         env:
+          GITHUB_USERNAME: AndreiDodu
           GITHUB_TOKEN: ${{ secrets.RELEASE_TOKEN }}
+          BUILD_ENV: 'github-actions'
