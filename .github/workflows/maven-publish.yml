@@ -15,7 +15,9 @@ jobs:
         with:
           java-version: '17'
           distribution: 'adopt'
-      - name: Publish to GitHub Packages
+      - name: Package to GitHub Packages
         run: mvn -B package --file pom.xml
+      - name: Publish to GitHub Packages Apache Maven
+        run: mvn deploy
         env:
           GITHUB_TOKEN: ${{ secrets.RELEASE_TOKEN }}
