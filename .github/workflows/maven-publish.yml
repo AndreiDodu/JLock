@@ -1,22 +1,20 @@
-name: Publish package to the Maven Central Repository
+name: Publish package to the Maven Central Repository and GitHub Packages
 on:
   release:
     types: [created]
 jobs:
   publish:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-latest 
+    permissions: 
+      contents: read
+      packages: write 
     steps:
-      - uses: actions/checkout@v3
-      - name: Set up Maven Central Repository
+      - name: Set up Java for publishing to GitHub Packages
         uses: actions/setup-java@v3
         with:
           java-version: '17'
           distribution: 'adopt'
-          server-id: test
-          server-username: AndreiDodu
-          server-password: ${{ env.TOKEN }}
-      - name: Publish package
+      - name: Publish to GitHub Packages
         run: mvn --batch-mode deploy
         env:
-          MAVEN_USERNAME: AndreiDodu
-          MAVEN_PASSWORD: ${{ env.TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.RELEASE_TOKEN }}
