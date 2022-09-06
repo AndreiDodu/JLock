@@ -22,7 +22,7 @@ To release manually:
 jLock.release();
 ```
 
-To release automatically:
+To release automatically (ENABLE_AUTOMATIC_UNLOCK have to be true):
 
 ```
 System.exit(status);
