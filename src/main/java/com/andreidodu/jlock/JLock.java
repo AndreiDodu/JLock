@@ -43,7 +43,7 @@ public class JLock {
 		try {
 			if (!firstCheckDone) {
 
-				String userHome = System.getProperty("user.dir");
+				String userHome = System.getProperty("user.home");
 				String pathString = userHome + "/.jlock";
 				Path path = Paths.get(pathString);
 				if (!Files.exists(path)) {
@@ -89,6 +89,7 @@ public class JLock {
 	private void deleteLockFile() {
 		if (this.file != null) {
 			this.file.delete();
+
 		}
 	}
 
