@@ -5,7 +5,7 @@
 
 	<groupId>com.andreidodu</groupId>
 	<artifactId>jlock</artifactId>
-	<version>0.6-SNAPSHOT</version>
+	<version>0.7</version>
 
 	<name>JLock</name>
 	<url>https://github.com/AndreiDodu</url>
