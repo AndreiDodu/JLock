@@ -1,6 +1,7 @@
 package com.andreidodu.jlock;
 
 import java.io.File;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.RandomAccessFile;
 import java.nio.channels.FileChannel;
@@ -50,6 +51,7 @@ public class JLock {
 				}
 
 				this.file = new File(pathString + "/" + applicationId + ".lock");
+				this.touch(file);
 				this.randomAccessFile = new RandomAccessFile(file, "rw");
 				this.fileChannel = randomAccessFile.getChannel();
 			}
@@ -58,6 +60,12 @@ public class JLock {
 			tryCloseRandomAccessFile();
 		}
 		return tryToLock();
+	}
+
+	private void touch(File file) throws IOException {
+		if (!file.exists()) {
+			new FileOutputStream(file).close();
+		}
 	}
 
 	private boolean tryToLock() {
