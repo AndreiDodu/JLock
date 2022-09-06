@@ -1,7 +1,7 @@
 # JLock
 A mini jar to ensure the uniqueness of execution of an java application.
 
-![example](https://raw.githubusercontent.com/AndreiDodu/JLock/master/screen.png)
+![example](https://raw.githubusercontent.com/AndreiDodu/JLock/master/example.png)
 
 ### How to use it?
 
