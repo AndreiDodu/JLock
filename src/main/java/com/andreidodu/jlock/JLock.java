@@ -5,6 +5,9 @@ import java.io.IOException;
 import java.io.RandomAccessFile;
 import java.nio.channels.FileChannel;
 import java.nio.channels.FileLock;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 
 public class JLock {
 
@@ -38,7 +41,15 @@ public class JLock {
 	private boolean isLocked(String applicationId) {
 		try {
 			if (!firstCheckDone) {
-				this.file = new File(applicationId + ".lock");
+
+				String userHome = System.getProperty("user.dir");
+				String pathString = userHome + "/.jlock";
+				Path path = Paths.get(pathString);
+				if (!Files.exists(path)) {
+					Files.createDirectories(path);
+				}
+
+				this.file = new File(pathString + "/" + applicationId + ".lock");
 				this.randomAccessFile = new RandomAccessFile(file, "rw");
 				this.fileChannel = randomAccessFile.getChannel();
 			}
