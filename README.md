@@ -32,20 +32,20 @@ System.exit(status);
 ## Maven
 
 ```
-		<dependency>
-			<groupId>com.andreidodu</groupId>
-			<artifactId>jlock</artifactId>
-			<version>0.7</version>
-		</dependency>
+<dependency>
+	<groupId>com.andreidodu</groupId>
+	<artifactId>jlock</artifactId>
+	<version>0.7</version>
+</dependency>
 ```		
 
 
 ```
-	<repositories>
-		<repository>
-			<id>github</id>
-			<name>GitHub AndreiDodu Apache Maven Packages</name>
-			<url>https://AndreiDodu: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@maven.pkg.github.com/AndreiDodu/jlock</url>
-		</repository>
-	</repositories>
+<repositories>
+	<repository>
+		<id>github</id>
+		<name>GitHub AndreiDodu Apache Maven Packages</name>
+		<url>https://AndreiDodu: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@maven.pkg.github.com/AndreiDodu/jlock</url>
+	</repository>
+</repositories>
 ```
