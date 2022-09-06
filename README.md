@@ -1,6 +1,7 @@
 # JLock
 A mini jar to ensure the uniqueness of execution of an java application.
 
+![example](https://raw.githubusercontent.com/AndreiDodu/JLock/master/screen.png)
 
 ### How to use it?
 
@@ -22,8 +23,30 @@ To release manually:
 jLock.release();
 ```
 
-To release automatically:
+To release automatically (ENABLE_AUTOMATIC_UNLOCK have to be true):
 
 ```
 System.exit(status);
+```
+
+
+## Maven
+
+```
+<dependency>
+	<groupId>com.andreidodu</groupId>
+	<artifactId>jlock</artifactId>
+	<version>0.7</version>
+</dependency>
+```		
+
+
+```
+<repositories>
+	<repository>
+		<id>github</id>
+		<name>GitHub AndreiDodu Apache Maven Packages</name>
+		<url>https://AndreiDodu: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@maven.pkg.github.com/AndreiDodu/jlock</url>
+	</repository>
+</repositories>
 ```
