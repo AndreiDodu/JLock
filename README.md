@@ -32,6 +32,15 @@ System.exit(status);
 ## Maven
 
 ```
+		<dependency>
+			<groupId>com.andreidodu</groupId>
+			<artifactId>jlock</artifactId>
+			<version>0.7</version>
+		</dependency>
+```		
+
+
+```
 	<repositories>
 		<repository>
 			<id>github</id>
