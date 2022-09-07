@@ -17,16 +17,17 @@ if (jLock.isLocked()){
 
 where `MY_APPLICATION_NAME` is the application name and the boolean `ENABLE_AUTOMATIC_UNLOCK`, if true, enables the automatic unlocking when `System.exit(X)` is called.
 
-To release manually:
-
-```java
-jLock.release();
-```
 
 To release automatically (ENABLE_AUTOMATIC_UNLOCK have to be true):
 
 ```java
 System.exit(status);
+```
+
+To release manually:
+
+```java
+jLock.release();
 ```
 
 
