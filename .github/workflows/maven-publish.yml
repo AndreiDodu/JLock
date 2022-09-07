@@ -17,10 +17,10 @@ jobs:
           distribution: 'adopt'
       - name: Package to GitHub Packages
         run: mvn -B package --file pom.xml
-      - name: Publish to GitHub Packages
-        env:
-          GITHUB_TOKEN: ${{ secrets.RELEASE_TOKEN }}
-        run: mvn deploy
+      #- name: Publish to GitHub Packages
+      #  env:
+      #    GITHUB_TOKEN: ${{ secrets.RELEASE_TOKEN }}
+      #  run: mvn deploy
       - name: Publish to the Maven Central Repository
         run: |
           mvn \
