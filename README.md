@@ -36,6 +36,6 @@ System.exit(status);
 <dependency>
 	<groupId>it.dodu</groupId>
 	<artifactId>jlock</artifactId>
-	<version>1.0</version>
+	<version>1.0.0</version>
 </dependency>
 ```		
