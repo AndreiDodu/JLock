@@ -34,19 +34,8 @@ System.exit(status);
 
 ```
 <dependency>
-	<groupId>com.andreidodu</groupId>
+	<groupId>it.dodu</groupId>
 	<artifactId>jlock</artifactId>
-	<version>0.7</version>
+	<version>1.0</version>
 </dependency>
 ```		
-
-
-```
-<repositories>
-	<repository>
-		<id>github</id>
-		<name>GitHub AndreiDodu Apache Maven Packages</name>
-		<url>https://AndreiDodu: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@maven.pkg.github.com/AndreiDodu/jlock</url>
-	</repository>
-</repositories>
-```
