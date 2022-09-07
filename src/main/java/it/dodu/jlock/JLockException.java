@@ -1,4 +1,4 @@
-package com.andreidodu.jlock;
+package it.dodu.jlock;
 
 public class JLockException extends RuntimeException {
 

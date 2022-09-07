@@ -1,4 +1,4 @@
-package com.andreidodu.jlock;
+package it.dodu.jlock;
 
 interface Const {
 

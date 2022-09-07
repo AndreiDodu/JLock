@@ -1,4 +1,4 @@
-package com.andreidodu.jlock;
+package it.dodu.jlock;
 
 import java.io.File;
 import java.io.IOException;
