@@ -80,9 +80,8 @@ public class JLock {
 	}
 
 	private void deleteLockFile() {
-		if (this.file != null) {
-			this.file.delete();
-
+		if (this.file != null && this.file.delete()) {
+			this.file = null;
 		}
 	}
 
@@ -90,6 +89,7 @@ public class JLock {
 		if (this.fileLock != null) {
 			try {
 				this.fileLock.release();
+				this.fileLock = null;
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
@@ -100,6 +100,7 @@ public class JLock {
 		if (randomAccessFile != null) {
 			try {
 				randomAccessFile.close();
+				this.randomAccessFile = null;
 			} catch (IOException ee) {
 				ee.printStackTrace();
 			}
@@ -110,6 +111,7 @@ public class JLock {
 		if (fileChannel != null) {
 			try {
 				fileChannel.close();
+				this.fileChannel = null;
 			} catch (IOException ee) {
 				ee.printStackTrace();
 			}
