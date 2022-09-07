@@ -7,7 +7,7 @@ A jar to ensure the uniqueness of execution of an java application.
 
 At the application startup
 
-```
+```java
 JLock jLock = new JLock("MY_APPLICATION_NAME", ENABLE_AUTOMATIC_UNLOCK);
 if (jLock.isLocked()){
   MessageDialog.error(your_jform, "Application is already running!");
@@ -19,20 +19,20 @@ where `MY_APPLICATION_NAME` is the application name and the boolean `ENABLE_AUTO
 
 To release manually:
 
-```
+```java
 jLock.release();
 ```
 
 To release automatically (ENABLE_AUTOMATIC_UNLOCK have to be true):
 
-```
+```java
 System.exit(status);
 ```
 
 
 ## Maven
 
-```
+```xml
 <dependency>
 	<groupId>it.dodu</groupId>
 	<artifactId>jlock</artifactId>
